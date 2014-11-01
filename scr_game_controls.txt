@@ -25,7 +25,7 @@ if (place_meeting(x,y+1,obj)
 
 if (place_meeting(x+hsp,y,obj))
 {
-	while (!place_meeting(x+hsp,y,obj)
+	while (!place_meeting(x+hsp,y,obj))
 	{
 	x += sign(hsp);
 	}
@@ -33,7 +33,7 @@ if (place_meeting(x+hsp,y,obj))
 }
 if (place_meeting(x,y+vsp,obj))
 {
-	while (!place_meeting(x,y+sign(vsp),obj)
+	while (!place_meeting(x,y+sign(vsp),obj))
 	{
 	y += sign(vsp);
 	}
