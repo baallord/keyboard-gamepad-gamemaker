@@ -1,0 +1,46 @@
+///scr_platform_controls(movement speed, vertical speed, horizontal speed, gravity, jump speed, platform/wall object for collision)
+
+//setting vars
+moveSpeed = argument[0]
+vsp = argument[1]
+hsp = argument[2]
+grav = argument[3]
+jumpSpeed = argument[4]
+obj = argument[5]
+
+
+key_right = keyboard_check(ord("D")) or gamepad_button_check(0,gp_padr);
+key_left = -keyboard_check(ord("A"));
+key_jump = keyboard_check_pressed(vk_space) or gamepad_button_check_pressed(0,gp_face1);
+gamepad_left = gamepad_button_check(0,gp_padl);
+//move
+move = key_right + key_left + gamepad_left;
+hsp = move * movespeed;
+if (vsp < 10) vsp += grav;
+
+if (place_meeting(x,y+1,obj)
+{
+	vsp = key_jump * -jumpspeed
+}
+
+if (place_meeting(x+hsp,y,obj))
+{
+	while (!place_meeting(x+hsp,y,obj)
+	{
+	x += sign(hsp);
+	}
+	hsp = 0;
+}
+if (place_meeting(x,y+vsp,obj))
+{
+	while (!place_meeting(x,y+sign(vsp),obj)
+	{
+	y += sign(vsp);
+	}
+	vsp = 0;
+}
+//move
+x += hsp;
+y += vsp;
+
+
