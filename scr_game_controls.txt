@@ -18,7 +18,7 @@ move = key_right + key_left + gamepad_left;
 hsp = move * movespeed;
 if (vsp < 10) vsp += grav;
 
-if (place_meeting(x,y+1,obj)
+if (place_meeting(x,y+1,obj))
 {
 	vsp = key_jump * -jumpspeed
 }
